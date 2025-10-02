@@ -351,7 +351,7 @@ if st.session_state.logged_in:
             for c in commodities:
                 st.sidebar.write(f"- {c}")
 
-            if st.button("Run Analysis and Generate Excel"):
+            if st.button("▶️Run Analysis and Generate Excel"):
                 all_sheets = {}
                 progress = st.progress(0)
 
@@ -394,6 +394,7 @@ if st.session_state.logged_in:
 
         else:
             st.info("Please upload the HASTY Excel file to begin.")
+
 
 
 
