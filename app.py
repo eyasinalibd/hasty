@@ -45,7 +45,8 @@ if st.session_state.logged_in:
             """
         )
 
-        template_url = "https://github.com/yourusername/HASTY/blob/main/survey_update.xlsx?raw=true"
+        template_url = "https://github.com/eyasinalibd/hasty/blob/main/survey_update.xlsx?raw=true"
+       
         st.markdown(f"[📥 Download Reporting Template]({template_url})")
 
     # --- Page: Analysis ---
@@ -392,3 +393,4 @@ if st.session_state.logged_in:
 
         else:
             st.info("Please upload the HASTY Excel file to begin.")
+
