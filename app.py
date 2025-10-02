@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-import io
+
 
 # --- Page Config ---
 st.set_page_config(page_title="HASTY", layout="wide")
@@ -393,4 +393,5 @@ if st.session_state.logged_in:
 
         else:
             st.info("Please upload the HASTY Excel file to begin.")
+
 
