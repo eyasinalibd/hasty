@@ -3,6 +3,7 @@ pandas
 numpy
 matplotlib
 openpyxl
+xlsxwriter
 markdown-it-py
 pygments
 rich
