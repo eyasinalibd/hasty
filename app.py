@@ -394,6 +394,10 @@ if st.session_state.logged_in:
 
         else:
             st.info("Please upload the HASTY Excel file to begin.")
+if st.sidebar.button("🚪 Logout"):
+        st.session_state.logged_in = False
+        st.rerun()
+
 
 
 
