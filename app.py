@@ -3,12 +3,10 @@ import pandas as pd
 import io
 
 
-import streamlit as st
-
 # --- Page Config ---
-st.set_page_config(page_title="HASTY", layout="centered")
+st.set_page_config(page_title="HASTY", layout="wide")
 
-# --- Initialize session state safely ---
+# --- Initialize session state ---
 if "logged_in" not in st.session_state:
     st.session_state.logged_in = False
 
@@ -21,7 +19,7 @@ if not st.session_state.logged_in:
         if username == "admin" and password == "1234":
             st.session_state.logged_in = True
             st.success("✅ Login successful!")
-            st.experimental_rerun()  # rerun after login
+            st.rerun()
         else:
             st.error("❌ Invalid username or password")
 
@@ -401,6 +399,7 @@ if st.session_state.logged_in:
     if st.sidebar.button("⎋ Logout"):
         st.session_state.logged_in = False
         st.rerun()
+
 
 
 
