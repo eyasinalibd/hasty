@@ -3,25 +3,27 @@ import pandas as pd
 import io
 
 
-# --- Page Config ---
-st.set_page_config(page_title="HASTY", layout="wide")
-
-# --- Initialize session state ---
-if "logged_in" not in st.session_state:
-    st.session_state.logged_in = False
-
-# --- Login Page ---
 if not st.session_state.logged_in:
-    st.title("🔐 HASTY - Login\n **Hectare, Annual Sales, Technology, Yield (HASTY)**")
-    username = st.text_input("Username")
-    password = st.text_input("Password", type="password")
-    if st.button("Login"):
-        if username == "admin" and password == "1234":
-            st.session_state.logged_in = True
-            st.success("✅ Login successful!")
-            st.rerun()
-        else:
-            st.error("❌ Invalid username or password")
+    with st.container():
+        st.markdown(
+            """
+            <div style="max-width:400px;margin:auto;padding:20px;
+                        border:1px solid #ddd;border-radius:10px;">
+            <h2 style="text-align:center;">🔐 HASTY - Login</h2>
+            </div>
+            """,
+            unsafe_allow_html=True
+        )
+        username = st.text_input("Username")
+        password = st.text_input("Password", type="password")
+        if st.button("Login"):
+            if username == "admin" and password == "1234":
+                st.session_state.logged_in = True
+                st.success("✅ Login successful!")
+                st.rerun()
+            else:
+                st.error("❌ Invalid username or password")
+
 
 # --- After Login ---
 if st.session_state.logged_in:
@@ -397,6 +399,7 @@ if st.session_state.logged_in:
     if st.sidebar.button("⎋ Logout"):
         st.session_state.logged_in = False
         st.rerun()
+
 
 
 
