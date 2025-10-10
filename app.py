@@ -4,7 +4,7 @@ import io
 
 
 # --- Page Config ---
-st.set_page_config(page_title="HASTY", layout="wide")
+st.set_page_config(page_title="HASTY", layout="centered")
 
 # --- Initialize session state ---
 if "logged_in" not in st.session_state:
@@ -399,6 +399,7 @@ if st.session_state.logged_in:
     if st.sidebar.button("⎋ Logout"):
         st.session_state.logged_in = False
         st.rerun()
+
 
 
 
